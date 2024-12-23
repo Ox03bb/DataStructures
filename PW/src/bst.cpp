@@ -1,15 +1,7 @@
 #include <iostream>
+#include <node.cpp>
 
 using namespace std;
-
-
-
-
-struct node{
-    int data;
-    struct node *left;
-    struct node *right;   
-};
 
 
 // ! CRUD
@@ -60,48 +52,84 @@ void InsertNode(node *root,int value){
     }
 }
 
+//? Read
 
-int8_t SearchNode(struct node* root,int value){
+int8_t* SearchNode(struct node* root,int value,int index = 0,int8_t* map = nullptr ){
+  
+    if (index == 0){
+        map = (int8_t*)malloc(sizeof(int8_t)*100); // this wil use to show position of the elements
+                                                       // 1->right ; -1->left ; 0->not_found ;2->the root
+        if (!map){
+            cout << "error in allocation of 'map'" << endl;
+            return nullptr;
+        }
+    }
+
     if (root != NULL){
+
         if( value == root->data ){
-           return 1;
+            if(index == 0){
+                map[index] = 2;
+                map[index+1] = '\0';
+            }
+            return map;
         }
         else if( value < root->data ){
-            SearchNode(root->left,value);
+            if(root->left){
+                map[index] = -1;
+                SearchNode(root->left,value,index+1,map);
+            }else{
+                map[0] = 0;
+                map[1] = '\0';
+                return map;
+            }
         }
         else{
-            SearchNode(root->right,value);
+            if(root->right){
+                map[index] = 1;
+                SearchNode(root->right,value,index+1,map);
+            }else{
+                map[0] = 0;
+                map[1] = '\0';
+                return map;
+            }       
         }
     }
-    return 0;
+
+    return map;
+    
 }
 
+void SearchNode_p(struct node* root,int value){
+    int index = 0;
+    
+    int8_t* map = SearchNode(root,value);
+    
+    if(!map[index]){
+        cout << "not found" ; cout.flush();
 
-//! Tree Traversal Methods 
+    }
+    
+    while(map[index]){
+        cout << "ll" ; cout.flush();
 
-void InOrderTraversal(struct node* root){
-   if(root != NULL) {
-        InOrderTraversal(root->left);
-        cout << root->data << " -> " ; cout.flush();
-        InOrderTraversal(root->right);
+        if(map[index] == 1){
+            cout << "right" << " | " ; cout.flush();
+        }
+        else if(map[index]==-1){
+            cout << "left" << " | " ; cout.flush();  
+        }
+        else if(map[index]==2){
+            
+            cout << "the root element" ; cout.flush();
+            
+        }else{
+            cout << "not found" ; cout.flush();
+        }
+
+        index++;
     }
 }
-
-void PreOrderTraversal(struct node* root){
-   if(root != NULL) {
-        cout << root->data << " -> " ; cout.flush();
-        PreOrderTraversal(root->left);
-        PreOrderTraversal(root->right);
-    }
-} 
-
-void PostOrderTraversal(struct node* root){
-   if(root != NULL) {
-        PostOrderTraversal(root->left);
-        PostOrderTraversal(root->right);
-        cout << root->data << " -> " ; cout.flush();
-    }
-} 
 
 
 
@@ -115,10 +143,10 @@ int main(){
     InsertNode(tree,2);
     InsertNode(tree,0);
 
-    int8_t a = SearchNode(tree,1);
-
-    cout << "search : " << (int)a << endl;
-    printf("%d",a);
+    
+    SearchNode_p(tree,011);
+    
+    
 
     return 1;
 }
