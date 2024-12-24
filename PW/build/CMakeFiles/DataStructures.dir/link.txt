@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/DataStructures.dir/src/lib/crud.cpp.o CMakeFiles/DataStructures.dir/src/lib/func.cpp.o CMakeFiles/DataStructures.dir/src/lib/node.cpp.o CMakeFiles/DataStructures.dir/src/main.cpp.o -o DataStructures 

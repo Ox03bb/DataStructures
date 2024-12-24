@@ -1,10 +1,18 @@
 #include <iostream>
-#include <node.cpp>
+#include <node.h>
 
 using namespace std;
 
 
-//? Successor
+// struct node{
+//     int data;
+//     struct node *left;
+//     struct node *right;   
+// };
+
+
+
+//? Successor ===================================================================
 node* Successor(struct node* root ){
 
     if (!root || !root->right) return nullptr;
@@ -25,8 +33,30 @@ node* SuccessorRec(struct node* root,int8_t ft=1 ){ // ft: is the fisrt loop
     return SuccessorRec(root->left,0);
 }
 
+node** __Successor(struct node* root ){
 
-//? Predecessor
+    /*
+        this is a rectified Successor function to use it in delettion
+    */
+
+    if (!root || !root->right) return nullptr;
+    node* prev = root;
+    node* selector = root->right;  
+
+    while(selector->left){
+        prev = selector;
+        selector = selector->left;
+    }
+
+    node** ptr = (node**)malloc(2*sizeof(node)) ;
+    ptr[0] = prev;
+    ptr[1] = selector;
+
+    return ptr;
+}
+
+
+//? Predecessor ===================================================================
 node* Predecessor(struct node* root ){
 
     if (!root || !root->left) return nullptr;
@@ -48,10 +78,32 @@ node* PredecessorRec(struct node* root,int8_t ft=1 ){ // ft: is the fisrt loop
 }
 
 
+node** __Predecessor(struct node* root ){
+
+    /*
+        this is a rectified Predecessor function to use it in delettion
+    */
+
+    if (!root || !root->left) return nullptr;
+    node* prev = root;
+    node* selector = root->left;    
+
+    while(selector->right){
+        prev = selector;
+        selector = selector->right;
+    }
+
+    node** ptr = (node**)malloc(2*sizeof(node)) ;
+    ptr[0] = prev;
+    ptr[1] = selector;
+
+    return ptr;
+}
 
 
 
-//? Traversal Methods
+//? Traversal Methods ===============================================================
+
 void InOrderTraversal(struct node* root){
    if(root != NULL) {
         InOrderTraversal(root->left);
