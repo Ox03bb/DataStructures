@@ -105,7 +105,7 @@ node** __Predecessor(struct node* root ){
 //? Traversal Methods ===============================================================
 
 void InOrderTraversal(struct node* root){
-   if(root != NULL) {
+    if(root != NULL) {
         InOrderTraversal(root->left);
         cout << root->data << " -> " ; cout.flush();
         InOrderTraversal(root->right);

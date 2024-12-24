@@ -15,9 +15,26 @@ int main(){
     InsertNode(tree,2);
     InsertNode(tree,0);
 
-   
-    cout << __Successor(SearchNode(tree,5))[0]  << " | " << __Successor(SearchNode(tree,5))[1] << endl;
+    DeleteNode(tree,5);
+    DeleteNode(tree,2);
+    // cout << "main" << tree << endl;
+
+    // cout << tree << " ";
+    // cout << tree->data << " ";
+    // cout << tree->left->data << " ";
+    // cout << tree->right->data << " ";
+    // cout << tree->left->left->data << " ";
+    // cout << tree->left->right->data << " ";
+    // cout << tree->right->left->data << " ";
+    // cout << endl;
+
+    InOrderTraversal(tree);
 
     return 1;
 }
 
+//       5
+//      / \
+//     1   7
+//    / \  /
+//   0   2 6
