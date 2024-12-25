@@ -24,6 +24,6 @@ void PostOrderTraversal(struct node* root);
 
 
 vector<int> ToArray(node* root);
-void Visualization(struct node* root);
+void Visualization(node* root);
 
 #endif 

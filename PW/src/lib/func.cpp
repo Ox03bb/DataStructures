@@ -3,6 +3,7 @@
 // #include <BST.h>
 
 #include <vector>
+#include <queue>
 
 using namespace std;
 
@@ -149,25 +150,45 @@ vector<int> ToArray(node* root) {
     return array;
 }
 
-//? =================================================================================
+//? Visualization=============================================================================
 
 
-// Print tree function
-void printTree(node* root, int space = 0, int height = 5) {
-    if (!root) return;
 
-    space += height;
+void Visualization(node* root) {
+    if (root == nullptr) {
+        cout << "Error: Tree is empty." << endl;
+        return;
+    }
 
-    // Print right child first
-    printTree(root->right, space);
+    queue<pair<node*, int>> q; // Pair to store node and its level
+    q.push({root, 0});
 
-    // Print current node
+    int currentLevel = 0;
+
+    while (!q.empty()) {
+        node* currentNode = q.front().first;
+        int level = q.front().second;
+        q.pop();
+
+        // Print a new line when moving to the next level
+        if (level > currentLevel) {
+            cout << endl;
+            currentLevel = level;
+        }
+
+        // Print the current node's value
+        cout << currentNode->data << " ";
+
+        // Add children to the queue with their level
+        if (currentNode->left != nullptr) {
+            q.push({currentNode->left, level + 1});
+        }
+
+        if (currentNode->right != nullptr) {
+            q.push({currentNode->right, level + 1});
+        }
+    }
     cout << endl;
-    for (int i = height; i < space; i++) cout << " ";
-    cout << root->data << endl;
-
-    // Print left child
-    printTree(root->left, space);
 }
 
 

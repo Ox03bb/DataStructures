@@ -19,7 +19,7 @@ int main(){
     // DeleteNode(tree,2);
     
     // InOrderTraversal(tree);
-    cout << BFSearch(tree,0)->data << endl;
+    Visualization(tree) ;
 
     return 1;
 }
