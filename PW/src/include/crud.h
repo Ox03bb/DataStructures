@@ -18,7 +18,9 @@ using namespace std;
 void InsertNode(node *root, int value);
 
 // Search
-node* SearchNode(struct node* root, int value);
+node* DFSearch(struct node* root, int value);
+node* BFSearch(node* root,int value); // Breadth First Search
+
 int8_t* SearchMapNode(struct node* root, int value, int index = 0, int8_t* map = nullptr);
 void SearchMapNode_p(struct node* root, int value);
 

@@ -1,5 +1,8 @@
 #include <iostream>
 #include <node.h>
+// #include <BST.h>
+
+#include <vector>
 
 using namespace std;
 
@@ -36,7 +39,7 @@ node* SuccessorRec(struct node* root,int8_t ft=1 ){ // ft: is the fisrt loop
 node** __Successor(struct node* root ){
 
     /*
-        this is a rectified Successor function to use it in delettion
+        this is a retun the successor and the previous node of the successor
     */
 
     if (!root || !root->right) return nullptr;
@@ -81,7 +84,7 @@ node* PredecessorRec(struct node* root,int8_t ft=1 ){ // ft: is the fisrt loop
 node** __Predecessor(struct node* root ){
 
     /*
-        this is a rectified Predecessor function to use it in delettion
+        this function will return the predecessor and the previous node of the predecessor
     */
 
     if (!root || !root->left) return nullptr;
@@ -127,3 +130,81 @@ void PostOrderTraversal(struct node* root){
         cout << root->data << " -> " ; cout.flush();
     }
 } 
+
+
+//? BST to Array ====================================================================
+
+
+void ToArray(node* root, vector<int>& array) {
+    if (root != NULL) {
+        ToArray(root->left, array);  // Traverse the left subtree
+        array.push_back(root->data); // Add current node's data
+        ToArray(root->right, array); // Traverse the right subtree
+    }
+}
+
+vector<int> ToArray(node* root) {
+    vector<int> array;
+    ToArray(root, array);
+    return array;
+}
+
+//? =================================================================================
+
+
+// Print tree function
+void printTree(node* root, int space = 0, int height = 5) {
+    if (!root) return;
+
+    space += height;
+
+    // Print right child first
+    printTree(root->right, space);
+
+    // Print current node
+    cout << endl;
+    for (int i = height; i < space; i++) cout << " ";
+    cout << root->data << endl;
+
+    // Print left child
+    printTree(root->left, space);
+}
+
+
+// void Visualization(node* tree) {
+//     int root_val = tree->data;
+//     vector<int> array = ToArray(tree);
+
+//     cout << root->data << 
+
+//     for (int element : array) {
+    
+    
+//         cout << element << " -> " ;
+//     }
+// }
+
+//? =================================================================================
+
+
+//? BST Visualization ===============================================================
+
+// void Visualization(node* tree){
+
+//     // node* 
+//     vector<int> array;
+//     array = ToArray(tree, array);
+
+//     // vector<int> array = ToArray(tree);
+//     // int index = 0;
+
+
+//     for (int elemnt : array) {
+//         cout << elemnt << " -> " << endl;
+//     }
+
+//     // while(array[index]){
+//     //     cout << (int)array[index] << " -> " << endl;
+//     //     index ++;
+//     // }
+// }

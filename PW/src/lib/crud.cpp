@@ -1,5 +1,8 @@
 #include <iostream>
 // #include <BST.h>
+
+#include <queue>
+
 #include <node.h>
 #include <func.h>
 
@@ -7,20 +10,11 @@
 using namespace std;
 
 
-// struct node{
-//     int data;
-//     struct node *left;
-//     struct node *right;   
-// };
-
 
 //? Insertion =======================================================================
 
-
-
-
-
 void InsertNode(node *root,int value){
+
     if (root == nullptr) {
         return;
     }
@@ -68,21 +62,55 @@ void InsertNode(node *root,int value){
 
 //? Search =======================================================================
 
-node* SearchNode(struct node* root,int value){
+node* DFSearch(struct node* root,int value){ // Depth First Search
+    /*
+        this function will return the node that has the value
+    */
+
     if(!root) return nullptr;
     if(root->data == value) return root;
 
     if (value > root->data){
-        return SearchNode(root->right,value);
+        return DFSearch(root->right,value);
     }else{
-        return SearchNode(root->left,value);
+        return DFSearch(root->left,value);
     }
 }
 
 
+node* BFSearch(node* root,int value) { // Breadth First Search
+    
+    if (root == nullptr){
+        return nullptr;
+    }
+    queue<node*> q;
+
+    q.push(root);
+
+    while (q.empty() == false ) {
+        
+        node* node = q.front();
+        if (node->data == value){
+            return node;
+        }
+        q.pop();
+
+        if (node->left != nullptr){
+            q.push(node->left);
+        }
+
+        if (node->right != nullptr){
+            q.push(node->right);
+        }
+    }
+    return nullptr;
+}
+
+
+
 node** __SearchNode(struct node* root, int value, node* prev = nullptr) {
     /*
-    this function well use in delete
+        this function return the Node that has the value and the previous node
     */
     node** out = (node**)malloc(2*sizeof(node));
 
@@ -102,16 +130,15 @@ node** __SearchNode(struct node* root, int value, node* prev = nullptr) {
 
 //?=======================================================================
 
-
-
-
-
 int8_t* SearchMapNode(struct node* root,int value,int index = 0,int8_t* map = nullptr ){
 
+    /*
+        this function will return the path to the node that has the value
+    */
 
     if (index == 0){
         map = (int8_t*)malloc(sizeof(int8_t)*100); // this wil use to show position of the elements
-                                                       // 1->right ; -1->left ; 0->not_found ;2->the root
+                                                    // 1->right ; -1->left ; 0->not_found ;2->the root
         if (!map){
             cout << "error in allocation of 'map'" << endl;
             return nullptr;
@@ -153,13 +180,17 @@ int8_t* SearchMapNode(struct node* root,int value,int index = 0,int8_t* map = nu
 }
 
 void SearchMapNode_p(struct node* root,int value){
+    /*
+        this function will print the path to the node that has the value
+    */ 
+
+
     int index = 0;
     
     int8_t* map = SearchMapNode(root,value);
     
     if(!map[index]){
         cout << "not found" ; cout.flush();
-
     }
     
     while(map[index]){
@@ -186,94 +217,33 @@ void SearchMapNode_p(struct node* root,int value){
 
 // ?Delete =======================================================================
 
-// int8_t DeleteNode(struct node* root,int value ){
-
-//     node** TrSuc = (node**)malloc(sizeof(node*));
-//     node* Suc = (node*)malloc(sizeof(node));
-//     node* SucPrev = (node*)malloc(sizeof(node));
-//     node** TargetPtr = __SearchNode(root,value);
-
-    
-//     if (!TargetPtr[1]) return 0 ;
-
-//     node* Target_prev = TargetPtr[0];
-//     node* Target = TargetPtr[1]; 
-//     free(TargetPtr);
-
-   
-
-
-//     int8_t SucOrPre = 0;
-
-//     if (Target){
-//         TrSuc = __Successor(Target);
-
-//         if (TrSuc[1]==nullptr){
-
-//             SucOrPre = 1;
-//             TrSuc = __Predecessor(Target);
-//         }
-
-//         SucPrev = TrSuc[0];
-//         Suc = TrSuc[1];
-//         free(TrSuc);
-
-//     }else{
-//         return 0;
-//     }
-
-//     if (!Target_prev){ // meas that we 'll del the global root
-//         Suc = root;
-        
-//         Suc->right = Target->right;
-//         Suc->left = Target->left;
-//         cout << Suc << "||" << Suc->left->data << "||" << root->right <<endl;
-        
-//         if(SucOrPre == 0 ){
-//             SucPrev->left = nullptr;
-
-//         }else{
-//             SucPrev->right = nullptr;
-
-//         }
-
-//     }
-
-//     free(Target);
-
-//     return 1;
-// }
-
 
 struct node* DeleteNode(struct node* root, int value) {
-    cout << "DeleteNode" << endl;
+    /*
+        this function will delete the node that has the value
+    */
 
     if (root == nullptr)
         return root;
 
-    // If key to be searched is in a subtree
     if (root->data > value)
         root->left = DeleteNode(root->left, value);
     else if (root->data < value)
         root->right = DeleteNode(root->right, value);
 
-    // If root matches with the given key
     else {
-        // Cases when root has 0 children or only right child
         if (root->left == nullptr) {
             struct node* temp = root->right;
             free(root);
             return temp;
         }
 
-        // When root has only left child
         if (root->right == nullptr) {
             struct node* temp = root->left;
             free(root);
             return temp;
         }
 
-        // When both children are present
         struct node* succ = Successor(root);
         root->data = succ->data;
         root->right = DeleteNode(root->right, succ->data);
@@ -285,3 +255,4 @@ struct node* DeleteNode(struct node* root, int value) {
 
 
 //? ==============================================================================
+ 

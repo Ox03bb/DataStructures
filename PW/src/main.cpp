@@ -15,20 +15,11 @@ int main(){
     InsertNode(tree,2);
     InsertNode(tree,0);
 
-    DeleteNode(tree,5);
-    DeleteNode(tree,2);
-    // cout << "main" << tree << endl;
-
-    // cout << tree << " ";
-    // cout << tree->data << " ";
-    // cout << tree->left->data << " ";
-    // cout << tree->right->data << " ";
-    // cout << tree->left->left->data << " ";
-    // cout << tree->left->right->data << " ";
-    // cout << tree->right->left->data << " ";
-    // cout << endl;
-
-    InOrderTraversal(tree);
+    // DeleteNode(tree,0);
+    // DeleteNode(tree,2);
+    
+    // InOrderTraversal(tree);
+    cout << BFSearch(tree,0)->data << endl;
 
     return 1;
 }
@@ -38,3 +29,14 @@ int main(){
 //     1   7
 //    / \  /
 //   0   2 6
+
+
+//       5
+//      / \
+//     1   7
+//    / \  / \
+//   0   2 6  8
+//  / \ / \ \
+// 3  4 9 10 11 
+
+// 1->9
