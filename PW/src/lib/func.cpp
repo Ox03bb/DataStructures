@@ -124,6 +124,7 @@ void PreOrderTraversal(struct node* root){
     }
 } 
 
+
 void PostOrderTraversal(struct node* root){
    if(root != NULL) {
         PostOrderTraversal(root->left);
