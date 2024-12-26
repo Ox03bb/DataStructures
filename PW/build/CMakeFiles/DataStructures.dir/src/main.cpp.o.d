@@ -149,4 +149,8 @@ CMakeFiles/DataStructures.dir/src/main.cpp.o: \
  /home/ox03bb/Desktop/DataStucters/PW/src/include/BST.h \
  /home/ox03bb/Desktop/DataStucters/PW/src/include/node.h \
  /home/ox03bb/Desktop/DataStucters/PW/src/include/crud.h \
- /home/ox03bb/Desktop/DataStucters/PW/src/include/func.h
+ /home/ox03bb/Desktop/DataStucters/PW/src/include/func.h \
+ /usr/include/c++/12/vector /usr/include/c++/12/bits/stl_uninitialized.h \
+ /usr/include/c++/12/bits/stl_vector.h \
+ /usr/include/c++/12/bits/stl_bvector.h \
+ /usr/include/c++/12/bits/vector.tcc

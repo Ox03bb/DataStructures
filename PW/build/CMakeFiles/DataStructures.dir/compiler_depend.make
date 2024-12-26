@@ -181,7 +181,20 @@ CMakeFiles/DataStructures.dir/src/lib/crud.cpp.o: /home/ox03bb/Desktop/DataStuct
   /usr/include/c++/12/bits/ostream.tcc \
   /usr/include/c++/12/istream \
   /usr/include/c++/12/bits/istream.tcc \
-  /home/ox03bb/Desktop/DataStucters/PW/src/include/node.h
+  /usr/include/c++/12/queue \
+  /usr/include/c++/12/deque \
+  /usr/include/c++/12/bits/stl_uninitialized.h \
+  /usr/include/c++/12/bits/stl_deque.h \
+  /usr/include/c++/12/bits/deque.tcc \
+  /usr/include/c++/12/vector \
+  /usr/include/c++/12/bits/stl_vector.h \
+  /usr/include/c++/12/bits/stl_bvector.h \
+  /usr/include/c++/12/bits/vector.tcc \
+  /usr/include/c++/12/bits/stl_heap.h \
+  /usr/include/c++/12/bits/stl_queue.h \
+  /usr/include/c++/12/bits/uses_allocator.h \
+  /home/ox03bb/Desktop/DataStucters/PW/src/include/node.h \
+  /home/ox03bb/Desktop/DataStucters/PW/src/include/func.h
 
 CMakeFiles/DataStructures.dir/src/lib/func.cpp.o: /home/ox03bb/Desktop/DataStucters/PW/src/lib/func.cpp \
   /usr/include/stdc-predef.h \
@@ -363,7 +376,12 @@ CMakeFiles/DataStructures.dir/src/lib/func.cpp.o: /home/ox03bb/Desktop/DataStuct
   /usr/include/c++/12/bits/ostream.tcc \
   /usr/include/c++/12/istream \
   /usr/include/c++/12/bits/istream.tcc \
-  /home/ox03bb/Desktop/DataStucters/PW/src/include/node.h
+  /home/ox03bb/Desktop/DataStucters/PW/src/include/node.h \
+  /usr/include/c++/12/vector \
+  /usr/include/c++/12/bits/stl_uninitialized.h \
+  /usr/include/c++/12/bits/stl_vector.h \
+  /usr/include/c++/12/bits/stl_bvector.h \
+  /usr/include/c++/12/bits/vector.tcc
 
 CMakeFiles/DataStructures.dir/src/lib/node.cpp.o: /home/ox03bb/Desktop/DataStucters/PW/src/lib/node.cpp \
   /usr/include/stdc-predef.h
@@ -551,7 +569,12 @@ CMakeFiles/DataStructures.dir/src/main.cpp.o: /home/ox03bb/Desktop/DataStucters/
   /home/ox03bb/Desktop/DataStucters/PW/src/include/BST.h \
   /home/ox03bb/Desktop/DataStucters/PW/src/include/node.h \
   /home/ox03bb/Desktop/DataStucters/PW/src/include/crud.h \
-  /home/ox03bb/Desktop/DataStucters/PW/src/include/func.h
+  /home/ox03bb/Desktop/DataStucters/PW/src/include/func.h \
+  /usr/include/c++/12/vector \
+  /usr/include/c++/12/bits/stl_uninitialized.h \
+  /usr/include/c++/12/bits/stl_vector.h \
+  /usr/include/c++/12/bits/stl_bvector.h \
+  /usr/include/c++/12/bits/vector.tcc
 
 
 /home/ox03bb/Desktop/DataStucters/PW/src/include/crud.h:
@@ -562,7 +585,21 @@ CMakeFiles/DataStructures.dir/src/main.cpp.o: /home/ox03bb/Desktop/DataStucters/
 
 /home/ox03bb/Desktop/DataStucters/PW/src/include/node.h:
 
+/usr/include/c++/12/bits/stl_heap.h:
+
+/usr/include/c++/12/bits/stl_bvector.h:
+
+/usr/include/c++/12/bits/stl_vector.h:
+
+/usr/include/c++/12/bits/stl_uninitialized.h:
+
+/usr/include/c++/12/deque:
+
+/usr/include/c++/12/queue:
+
 /usr/include/c++/12/bits/basic_ios.tcc:
+
+/usr/include/c++/12/vector:
 
 /usr/include/c++/12/bits/streambuf_iterator.h:
 
@@ -625,6 +662,8 @@ CMakeFiles/DataStructures.dir/src/main.cpp.o: /home/ox03bb/Desktop/DataStucters/
 /usr/include/x86_64-linux-gnu/bits/byteswap.h:
 
 /usr/include/c++/12/cstdlib:
+
+/usr/include/c++/12/bits/stl_deque.h:
 
 /usr/include/c++/12/ext/string_conversions.h:
 
@@ -812,6 +851,8 @@ CMakeFiles/DataStructures.dir/src/main.cpp.o: /home/ox03bb/Desktop/DataStucters/
 
 /usr/include/pthread.h:
 
+/usr/include/c++/12/bits/stl_queue.h:
+
 /usr/include/c++/12/iostream:
 
 /usr/include/sched.h:
@@ -888,6 +929,8 @@ CMakeFiles/DataStructures.dir/src/main.cpp.o: /home/ox03bb/Desktop/DataStucters/
 
 /usr/include/c++/12/bits/cpp_type_traits.h:
 
+/usr/include/c++/12/bits/deque.tcc:
+
 /usr/include/c++/12/bits/new_allocator.h:
 
 /usr/include/c++/12/bits/cxxabi_forced.h:
@@ -895,6 +938,8 @@ CMakeFiles/DataStructures.dir/src/main.cpp.o: /home/ox03bb/Desktop/DataStucters/
 /usr/include/x86_64-linux-gnu/c++/12/bits/ctype_base.h:
 
 /usr/include/c++/12/bits/stl_iterator_base_types.h:
+
+/usr/include/c++/12/bits/uses_allocator.h:
 
 /usr/include/c++/12/bits/stl_iterator_base_funcs.h:
 
@@ -913,6 +958,8 @@ CMakeFiles/DataStructures.dir/src/main.cpp.o: /home/ox03bb/Desktop/DataStucters/
 /usr/include/x86_64-linux-gnu/bits/select.h:
 
 /usr/include/c++/12/bits/refwrap.h:
+
+/usr/include/c++/12/bits/vector.tcc:
 
 /usr/include/c++/12/bits/predefined_ops.h:
 

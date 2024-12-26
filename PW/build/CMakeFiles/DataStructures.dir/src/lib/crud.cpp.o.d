@@ -145,5 +145,13 @@ CMakeFiles/DataStructures.dir/src/lib/crud.cpp.o: \
  /usr/include/c++/12/bits/locale_facets.tcc \
  /usr/include/c++/12/bits/basic_ios.tcc \
  /usr/include/c++/12/bits/ostream.tcc /usr/include/c++/12/istream \
- /usr/include/c++/12/bits/istream.tcc \
- /home/ox03bb/Desktop/DataStucters/PW/src/include/node.h
+ /usr/include/c++/12/bits/istream.tcc /usr/include/c++/12/queue \
+ /usr/include/c++/12/deque /usr/include/c++/12/bits/stl_uninitialized.h \
+ /usr/include/c++/12/bits/stl_deque.h /usr/include/c++/12/bits/deque.tcc \
+ /usr/include/c++/12/vector /usr/include/c++/12/bits/stl_vector.h \
+ /usr/include/c++/12/bits/stl_bvector.h \
+ /usr/include/c++/12/bits/vector.tcc /usr/include/c++/12/bits/stl_heap.h \
+ /usr/include/c++/12/bits/stl_queue.h \
+ /usr/include/c++/12/bits/uses_allocator.h \
+ /home/ox03bb/Desktop/DataStucters/PW/src/include/node.h \
+ /home/ox03bb/Desktop/DataStucters/PW/src/include/func.h
