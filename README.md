@@ -18,7 +18,6 @@
 ```
 ### 4. Run the executable.
 ```bash
-	cd ..
 	./DataStructures
 ```
 
